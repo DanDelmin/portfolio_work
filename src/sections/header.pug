@@ -1,0 +1,10 @@
+header.header
+    .container.header__container
+        a.header__logo(href='/') mr.D
+        +nav('header__nav nav', ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"])
+        .header__socials.socials
+            ul.socials__list
+                each social in ['insta', 'vk', 'github']
+                    li.socials__item
+                        a(class=`socials__link socials__link_${social}` href="#")
+                            +icon(`${social}`, 'socials__icon')
