@@ -20,12 +20,24 @@ body {
   color: $text-color;
 }
 
-main {
+.intro {
+  //background: url("$img-url/intro.png") no-repeat top center #fff;
   overflow: hidden;
   min-height: 100%;
   position: relative;
-  background: url("$url/intro.png") no-repeat top center / cover #fff;
+}
+.parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 
+  &__bg {
+    width: 100%;
+    //height: auto;
+  }
 }
 
 .container {
@@ -82,6 +94,7 @@ button[type="button"] {
 a {
   color: inherit;
   cursor: pointer;
+  text-decoration: none;
 }
 
 img {

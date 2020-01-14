@@ -1,0 +1,109 @@
+.about {
+  padding: 130px 0 170px;
+  position: relative;
+  z-index: 1;
+
+  .profile {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    &__left-side {
+      width: calc((100% / 12) * 3);
+      padding: 0 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &_photo {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 0 70px 0;
+      }
+
+      &_data {
+        align-self: flex-start;
+        width: 100%;
+
+        .data__list {
+          &_item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 700;
+
+            &:not(:last-child) {
+              margin: 0 0 25px;
+            }
+          }
+
+          &_quest {
+            color: rgba(#464D62, .3);
+            flex: 0 0 50%;
+          }
+          &_answr {
+            text-align: left;
+            flex: 0 0 50%;
+          }
+        }
+
+      }
+
+    }
+
+    &__right-side {
+      width: calc((100% / 12) * 5);
+      padding: 0 15px 0 45px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__descr {
+      flex: 1 0 auto;
+    }
+
+    &__title {
+      font-size: 36px;
+      font-weight: 800;
+      margin: 0 0 36px;
+
+      &_small {
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        color: rgba(#484D62, .5);
+        max-width: 160px;
+        text-align: center;
+        margin: 0 0 30px;
+      }
+    }
+
+    &__text {
+      font-weight: 600;
+      color: rgba(#484D62, .5);
+    }
+
+    blockquote {
+      font-style: italic;
+      line-height: 1.88;
+      color: rgba(#484D62, .5);
+      position: relative;
+      margin: 0  0 0 -45px;
+      display: inline-flex;
+      align-items: flex-start;
+      flex: 0 0 auto;
+
+      &::before {
+        content: "*";
+        font-size: 48px;
+        line-height: 48px;
+        color: rgba(#db0200, .1);
+        margin: 0 30px 0 0;
+      }
+    }
+
+  }
+
+}

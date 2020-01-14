@@ -1,26 +1,75 @@
 .title-section {
+  //padding: 0 0 80px;
+  position: relative;
+  margin-top: -101px;
+  z-index: 1;
+
+  &__container {
   width: 100%;
-  height: calc(100vh - 120px);
+  height: calc(100vh - 101px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  }
 
   &__title {
     display: flex;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    flex: 1 0 95%;
+    text-align: center;
+
 
     font-size: 72px;
     font-weight: 800;
+    line-height: .83;
   }
 
   &__small {
     font-size: 18px;
     font-weight: 600;
+    line-height: 1.67;
     color: rgba(#484D62, .4);
     max-width: 160px;
     text-align: center;
+    margin: 0 0 33px;
   }
 
+}
+
+.scroll-trigger {
+  display: flex;
+  align-items: center;
+  flex: 0 0 5%;
+  box-sizing: content-box;
+
+  &:link, &:active {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &__icon {
+    height: 30px;
+    fill: $text-color;
+    margin: 0 0 0 22px;
+    animation: slip 2.5s linear infinite;
+  }
+}
+
+@include keyframes(slip) {
+  25%, 50% {
+    transform: translateY(0px);
+  }
+  60% {
+    transform: translateY(7px);
+  }
+  80% {
+    transform: translateY(-3px);
+  }
 }
