@@ -1,0 +1,61 @@
+.skills {
+  margin: 150px 0;
+}
+.skills-board {
+  display: flex;
+  align-items: flex-end;
+
+  &__left {
+    width: calc((100% / 12) * 4);
+    margin: 0 15px;
+    position: relative;
+  }
+  &__right {
+    width: calc((100% / 12) * 8);
+    margin: 0 15px;
+  }
+  &__title {
+    margin: 0 0 60px;
+  }
+  &__text {
+    margin: 0 0 96px;
+    max-width: 585px;
+  }
+}
+
+.chart {
+  margin: 58px 0;
+  &__title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 0 45px;
+  }
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+  &__item {
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba($text-color, .5);
+
+    &:not(:first-child) {
+      margin-left: 68px;
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    .progress-line {
+      transform: rotate(180deg);
+      transform-origin: center;
+      transition: stroke-dashoffset 1s linear;
+      stroke-dashoffset: 280;
+    }
+  }
+}

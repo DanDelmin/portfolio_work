@@ -1,7 +1,6 @@
 .title-section {
   //padding: 0 0 80px;
   position: relative;
-  margin-top: -101px;
   z-index: 1;
 
   &__container {
@@ -13,28 +12,26 @@
   justify-content: center;
   }
 
-  &__title {
+  &__main-title {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1 0 95%;
+    flex: 1 0 80%;
     text-align: center;
-
-
     font-size: 72px;
     font-weight: 800;
     line-height: .83;
-  }
 
-  &__small {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 1.67;
-    color: rgba(#484D62, .4);
-    max-width: 160px;
-    text-align: center;
-    margin: 0 0 33px;
+    .main-title__inner {
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.67;
+        color: rgba($text-color, .4);
+        max-width: 160px;
+        text-align: center;
+        margin: 0 0 33px;
+    }
   }
 
 }
@@ -42,7 +39,7 @@
 .scroll-trigger {
   display: flex;
   align-items: center;
-  flex: 0 0 5%;
+  flex: 0 0 20%;
   box-sizing: content-box;
 
   &:link, &:active {

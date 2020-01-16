@@ -3,3 +3,25 @@
 @import "./mixins.pcss";
 @import "./layout/base.pcss";
 @import './blocks/*.pcss';
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 0 0 36px;
+  &__inner {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba($text-color, .5);
+    max-width: 160px;
+    text-align: center;
+    margin: 0 0 30px;
+  }
+  &_small {
+    font-size: 30px;
+  }
+}
+.text {
+  font-weight: 600;
+  color: rgba($text-color, .5);
+}
