@@ -1,16 +1,12 @@
 .skills {
-  margin: 150px 0;
+  padding: 150px 0;
 }
 .skills-board {
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-end;
+  background: url("$img-url/bag.png") no-repeat -10% bottom / 45%;
 
-  &__left {
-    width: calc((100% / 12) * 4);
-    margin: 0 15px;
-    position: relative;
-  }
-  &__right {
+  &__content {
     width: calc((100% / 12) * 8);
     margin: 0 15px;
   }
@@ -24,7 +20,7 @@
 }
 
 .chart {
-  margin: 58px 0;
+  margin: 58px 0 0 125px;
   &__title {
     font-size: 24px;
     font-weight: bold;

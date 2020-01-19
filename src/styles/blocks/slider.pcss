@@ -1,0 +1,176 @@
+.title.works__title {
+  margin: 0 0 90px;
+}
+
+.slider {
+  display: flex;
+  align-items: flex-start;
+
+  &__display {
+    position: relative;
+    width: calc((100% / 12) * 8);
+    margin: 0 15px 0 0;
+  }
+
+  &__display-thumbs {
+    position: absolute;
+    right: -3px;
+    bottom: -3px;
+  }
+
+  &__display-buttons {
+    position: absolute;
+    right: 0;
+  }
+
+  &__info {
+    width: calc((100% / 12) * 4);
+    margin: 0 0 0 15px;
+    counter-reset: slides; //слушаем блок инфо для счетчика
+  }
+}
+
+.thumbs {
+  &__item {
+    position: relative;
+    cursor: pointer;
+    transition: all .2s linear;
+    border: 3px solid transparent;
+    margin: -6px 0 0;
+    max-width: 178px;
+
+    &:hover {
+      z-index: 1;
+      border-color: #5500f2;
+    }
+
+    //при активном слайде
+    &.active {
+      border: 3px solid #5500f2;
+    }
+  }
+
+  &__pic {
+    object-fit: cover;
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+
+  &__arrow {
+    width: 10Px;
+    fill: #fff;
+  }
+
+  &__item {
+    width: 50Px;
+    height: 50Px;
+    background: #353e4e;
+    transition: all .2s linear;
+
+    &_next .buttons__arrow {
+      transform: rotate(90deg);
+    }
+
+    &_prev .buttons__arrow {
+      transform: rotate(-90deg);
+    }
+
+    &:hover {
+      background: #5500f2;
+    }
+
+    // при первом и последнем слайде
+    &.disable .buttons__arrow {
+      opacity: .3;
+    }
+  }
+}
+
+
+.info__tags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 35px;
+}
+
+.tags {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 30px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 48px;
+    padding: 16px 20px;
+    border-radius: 22px;
+    height: 45px;
+    background: #f3f5f9;
+    color: rgba($text-color, .7);
+    font-weight: 600;
+
+    &:not(last-child) {
+      margin: 0 15px 15px 0;
+    }
+  }
+}
+
+.info__text {
+  padding: 0 0 0 125px;
+  position: relative;
+  font-size: 0; //для выравнивания before
+
+  &::before {
+    counter-increment: slides;
+    content: counter(slides); //если в slider__info появится еще блок с текст, то счетчик увеличится
+    font-size: 28rem;
+    line-height: 19rem;
+    font-weight: 800;
+    color: #e6e6e6;
+    text-indent: -125px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+.info__title {
+  margin: 0 0 44px;
+  line-height: 48px;
+}
+
+.info__descr {
+  color: rgba($text-color, .7);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 30px;
+  margin: 0 0 50px;
+}
+
+.iconed-link {
+  display: inline-flex;
+  align-items: center;
+
+  &__icon {
+    width: 15px;
+    fill: #586ed3;
+    margin: 0 20px 0 0;
+  }
+
+  &__text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #586ed3;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

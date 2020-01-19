@@ -2,6 +2,7 @@
   padding: 130px 0 170px;
   position: relative;
   z-index: 1;
+}
 
   .profile {
     display: flex;
@@ -15,15 +16,13 @@
       flex-direction: column;
       align-items: center;
 
-      &_photo {
+      & .avatar {
         width: 200px;
         height: 200px;
-        border-radius: 50%;
-        overflow: hidden;
         margin: 0 0 70px 0;
       }
 
-      &_data {
+      & .data {
         align-self: flex-start;
         width: 100%;
 
@@ -88,4 +87,9 @@
 
   }
 
+
+
+.avatar {
+  border-radius: 50%;
+  overflow: hidden;
 }
