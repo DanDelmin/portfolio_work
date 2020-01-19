@@ -20,25 +20,24 @@ body {
   color: $text-color;
 }
 
-.intro {
-  //background: url("$img-url/intro.png") no-repeat top center #fff;
-  overflow: hidden;
-  min-height: 100%;
-  position: relative;
-}
-.parallax {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-
-  &__bg {
-    width: 100%;
-    object-fit: cover;
-  }
-}
+//.intro {
+//  overflow: hidden;
+//  min-height: 100%;
+//  position: relative;
+//}
+//.parallax {
+//  position: absolute;
+//  top: 0;
+//  left: 0;
+//  right: 0;
+//  bottom: 0;
+//  z-index: -1;
+//
+//  &__bg {
+//    width: 100%;
+//    object-fit: cover;
+//  }
+//}
 
 .container {
   margin: 0 auto;
@@ -97,9 +96,13 @@ a {
   text-decoration: none;
 }
 
+a, button, input, label, textarea {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
 img {
   display: block;
   max-width: 100%;
-  max-height: 100%;
 }
 

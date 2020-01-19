@@ -1,1 +1,17 @@
-section.form FORM
+section.form-section
+    .container
+        h2.title.form__title Связаться со мной
+        div.form__wrapper
+            form.form
+                .form__data
+                    label(class="form__label" for='user-name') Введите ваше имя
+                        input(class="form__input" type="text" id="user-name" name="user-name" pattern="[A-Za-zА-Яа-яЁё]" required)
+                        +icon('user', 'form__icon form__icon_user')
+                    label(class="form__label" for="user-email") Введите ваш email
+                        input(class="form__input" type="email" id="user-email" name="user-email" required)
+                        +icon('envelope', 'form__icon form__icon_mail')
+                label(class="form__label" for="message") Сообщение к письму
+                    textarea(class="form__textarea" rows="2" cols="50" id="message" name="message" maxlength="300" required)
+                    +icon('message', 'form__icon form__icon_message')
+                input(class="form__submit" type="submit" value="Отправить")
+

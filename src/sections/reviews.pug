@@ -1,1 +1,28 @@
-section.reviews reviews
+section.reviews
+    .separate.separate__reviews
+        svg.separate__item(viewBox='0 0 1000 90' preserveAspectRatio='none')
+            polygon(points="0,0 500,90, 1000,0")
+    .container
+        .reviews__content
+            .reviews__top
+                h2.title.reviews__title Что обо мне говорят
+                .reviews__control
+                    .control
+                        button.control__btn.control__btn_left
+                            +icon('arrow-down', 'control__arrow')
+                        button.control__btn.control__btn_right
+                            +icon('arrow-down', 'control__arrow')
+            .reviews__content-slider
+                .content-slider
+                    - for (var i = 0; i < 2; i++)
+                        .content-slider__item
+                            .content-slider__text.text
+                                p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                            .content-slider__caption
+                                .author
+                                    .avatar.author__avatar
+                                        +image('userfiles/Dima.jpg', 'user-pic')
+                                    .author__data
+                                        .author__name Ковальчук Дмитрий
+                                        .author__position Основатель Loftschool
+

@@ -8,21 +8,18 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Portfolio | main page
     body
-        .intro
-            .parallax
-                +image('content/intro.png', 'parallax__bg')
+        .mountain
+            .mountain__parallax
+                +image('parallax/mountain.jpg', 'mountain__bg')
             include ./sections/header.pug
             include ./sections/title.pug
             include ./sections/about.pug
         include ./sections/skills.pug
         include ./sections/slider.pug
-        include ./sections/reviews.pug
-        include ./sections/form.pug
-        include ./sections/footer.pug
+        .budda
+            .budda__parallax
+                +image('parallax/budda.jpg', 'budda__bg')
+            include ./sections/reviews.pug
 
-
-    //.wrapper
-    //  .maincontent
-    //    +image('content/user.jpg', 'user-pic')
-    //    +icon('link', 'link-class')
-    //    .icon-bg
+            include ./sections/form.pug
+    include ./sections/footer.pug

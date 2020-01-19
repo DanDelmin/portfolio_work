@@ -1,3 +1,6 @@
+.works {
+  padding: 150px 0;
+}
 .title.works__title {
   margin: 0 0 90px;
 }
@@ -26,7 +29,7 @@
   &__info {
     width: calc((100% / 12) * 4);
     margin: 0 0 0 15px;
-    counter-reset: slides; //слушаем блок инфо для счетчика
+    counter-reset: slides-num; //слушаем блок инфо для счетчика
   }
 }
 
@@ -127,8 +130,8 @@
   font-size: 0; //для выравнивания before
 
   &::before {
-    counter-increment: slides;
-    content: counter(slides); //если в slider__info появится еще блок с текст, то счетчик увеличится
+    counter-increment: slides-num;
+    content: counter(slides-num); //если в slider__info появится еще блок с текст, то счетчик увеличится
     font-size: 28rem;
     line-height: 19rem;
     font-weight: 800;

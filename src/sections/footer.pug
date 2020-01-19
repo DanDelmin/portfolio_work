@@ -1,1 +1,22 @@
-footer FOOTER
+footer.footer
+    .footer__wrapper
+        .container.footer__container
+            .footer__copyright
+                .copyright
+                    .copyright__year © 2020
+                    .copyright__author
+                        .copyright__author-name Дельмин<br> Даниелов
+                        .copyright__author-descr Личный сайт<br> веб-разработчика
+            .footer__content
+                +nav('footer__nav nav', ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"])
+                .footer__soc-descr
+                    .soc-descr__text Этот сайт я&nbsp;сделал в&nbsp;рамках обучения в&nbsp;Школе онлайн образования Loftschool
+                        .footer__socials.socials
+                            ul.socials__list
+                                each social in ['insta', 'vk', 'github']
+                                    li.socials__item
+                                        a(class=`socials__link socials__link_${social}` href="#")
+                                            +icon(`${social}`, 'socials__icon')
+                    .footer__cited
+                        .cited__text Всегда пишите код так, будто сопровождать его будет склонный к&nbsp;насилию психопат, который знает где вы&nbsp;живете
+                        .cited__author Martin Golding
