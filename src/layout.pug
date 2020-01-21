@@ -10,7 +10,21 @@ html(lang="en")
     body
         .mountain
             .mountain__parallax
-                +image('parallax/mountain.jpg', 'mountain__bg')
+                -
+                    var parallax = [
+                        'sky',
+                        'mountain',
+                        'baloon',
+                        'cloud',
+                        'man',
+                        'mountain1',
+                        'white',
+                    ]
+
+                each layer in parallax
+                    +image(`parallax/mountain/${layer}.png`, `parallax__layer_${layer} parallax__layer`)
+
+
             include ./sections/header.pug
             include ./sections/title.pug
             include ./sections/about.pug
