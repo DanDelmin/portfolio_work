@@ -4,6 +4,10 @@
 .form {
   &__wrapper {
     width: calc((100% / 12) * 7);
+
+    @include tablets-vert {
+      width: 100%;
+    }
   }
 
   &__icon {
@@ -85,7 +89,7 @@
   }
 
   &__submit {
-    background: url('$img-url/submit.png') no-repeat 0 0 transparent;
+    background: url('$img-url/submit.png') no-repeat 0 0/cover transparent;
     display: inline-flex;
     width: 347px;
     height: 80px;
@@ -98,6 +102,11 @@
     justify-content: center;
     cursor: pointer;
     margin: 60px 0 0;
+
+    @include tablets-vert {
+        display: flex;
+        margin: 60px auto 0;
+    }
   }
 
 }

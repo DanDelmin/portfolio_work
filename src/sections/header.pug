@@ -8,3 +8,13 @@ header.header
                     li.socials__item
                         a(class=`socials__link socials__link_${social}` href="#")
                             +icon(`${social}`, 'socials__icon')
+        .header__burger-btn
+        aside.mobile-menu
+            .mobile-menu__content
+                .mobile-menu__close
+                +nav('mobile-menu__nav nav', ["Главная", "Обо мне", "Навыки", "Работы", "Отзывы", "Связаться"])
+                ul.socials__list
+                    each social in ['insta', 'vk', 'github']
+                        li.socials__item
+                            a(class=`socials__link socials__link_${social}` href="#")
+                                +icon(`${social}`, 'socials__icon')

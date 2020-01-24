@@ -2,7 +2,7 @@ html {
   @include desktop {
     font-size: 15px;
   }
-  @include tablets {
+  @include tablets-hor {
     font-size: 14px;
   }
 }
@@ -27,6 +27,13 @@ body {
   max-width: 1480px;
   width: 95%;
   // width: 1490px;
+  @include desktop {
+    padding: 0 30px;
+  }
+
+  @include tablets-vert {
+    padding: 0;
+  }
 
   @include phones {
     width: 85%;

@@ -1,6 +1,12 @@
 .works {
   padding: 150px 0;
+
+  @include tablets-vert {
+    padding: 76px 0;
+    overflow-x: hidden;
+  }
 }
+
 .title.works__title {
   margin: 0 0 90px;
 }
@@ -13,6 +19,24 @@
     position: relative;
     width: calc((100% / 12) * 8);
     margin: 0 15px 0 0;
+
+    @include tablets-vert {
+      width: calc((100% / 12) * 11);
+      margin: 0;
+      &::after {
+        counter-increment: slides-num;
+        content: '2'; //counter(slides-num); //если в slider__info появится еще блок с текст, то счетчик увеличится
+        font-size: 28rem;
+        line-height: 19rem;
+        font-weight: 800;
+        color: #e6e6e6;
+        text-indent: -125px;
+        position: absolute;
+        top: 0;
+        right: -160Px;
+        z-index: -1;
+      }
+    }
   }
 
   &__display-thumbs {
@@ -30,6 +54,16 @@
     width: calc((100% / 12) * 4);
     margin: 0 0 0 15px;
     counter-reset: slides-num; //слушаем блок инфо для счетчика
+
+    @include tablets-vert {
+      width: calc((100% / 12) * 10);
+      margin: 116px auto 0;
+      text-align: center;
+    }
+  }
+
+  @include tablets-vert {
+    flex-direction: column;
   }
 }
 
@@ -141,6 +175,13 @@
     top: 0;
     left: 0;
     z-index: -1;
+  }
+
+  @include tablets-vert {
+    padding: 0;
+    &:before {
+      content: none;
+    }
   }
 }
 

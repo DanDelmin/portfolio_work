@@ -1,39 +1,64 @@
 .skills {
   margin: -120px 0 0;
+  background: url("$img-url/bag.png") no-repeat 0 bottom / 40%;
+  @include desktop {
+    background-size: 55%;
+    background-position: -210px bottom;
+  }
+  @include tablets-vert {
+    background: none;
+  }
 }
+
 .skills-board {
   display: flex;
   justify-content: flex-end;
-  background: url("$img-url/bag.png") no-repeat -10% bottom / 45%;
   padding: 150px 0 0;
 
   &__content {
     width: calc((100% / 12) * 8);
     margin: 0 15px;
+    @include desktop {
+      width: calc((100% / 12) * 9);
+    }
+    @include tablets-vert {
+      width: calc((100% / 12) * 10);
+    }
   }
+
   &__title {
     margin: 0 0 60px;
   }
+
   &__text {
     margin: 0 0 96px;
     max-width: 585px;
   }
+
+  @include tablets-vert {
+    justify-content: center;
+  }
+
 }
 
 .chart {
   margin: 58px 0 0 125px;
+
   &__title {
     font-size: 24px;
     font-weight: bold;
     margin: 0 0 45px;
   }
+
   &__list {
     display: flex;
     align-items: center;
   }
+
   &__item {
-    width: 140px;
-    height: 140px;
+    position: relative;
+    width: 150px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,12 +67,13 @@
     color: rgba($text-color, .5);
 
     &:not(:first-child) {
-      margin-left: 68px;
+      margin-left: 75px;
     }
   }
 
   &__svg {
     position: absolute;
+
     .progress-line {
       transform: rotate(180deg);
       transform-origin: center;
@@ -55,4 +81,24 @@
       stroke-dashoffset: 280;
     }
   }
+
+  @include tablets-vert {
+    margin: 58px 0 0;
+  }
+}
+
+.mobile-bag {
+  align-items: center;
+  justify-content: center;
+  display: none;
+  margin: 120px 0 0;
+
+  &__img {
+    max-width: 45%;
+  }
+
+  @include tablets-vert {
+    display: flex;
+  }
+
 }
