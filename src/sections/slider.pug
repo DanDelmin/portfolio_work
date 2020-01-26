@@ -1,31 +1,49 @@
 section.works
-    .container
-        h2.title.works__title Мои работы
-        .slider
-            .slider__display
-                +image('content/preview.jpg', 'slider__display-img')
-                .slider__display-thumbs
-                    ul.thumbs
-                        - for (var i = 1; i < 5; ++i)
-                            li.thumbs__item
-                                +image('content/thumbs' + i + '.jpg', 'thumbs__pic')
-                .slider__display-buttons
-                    .buttons
-                        button.buttons__item.buttons__item_next.hide
-                            +icon('arrow-down', 'buttons__arrow')
-                        button.buttons__item.buttons__item_prev
-                            +icon('arrow-down', 'buttons__arrow')
+    .container.works__container
+        #slider-component
 
-            .slider__info
-                .info__tags
-                    - var tags = ['HTML', 'CSS', 'Javascript', 'PHP']
-                    ul.tags
-                       each tag in tags
-                         li.tags__item #{tag}
-                .info__text
-                    h3.title.title_small.info__title Сайт школы<br>образования
-                    .info__descr
-                        p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-                    a(href="#" class="iconed-link" target="_blank")
-                        +icon('link', 'iconed-link__icon')
-                        span.iconed-link__text Посмотреть сайт
+//Vue components for slider:
+
+script(type=text/x-template)#slider-container
+    .slider
+        display(:works = "works", :currentWork = "currentWork", @slide="handleSLide", :currentIndex = "currentIndex")
+        info(:currentWork = "currentWork")
+
+script(type=text/x-template)#display
+    .slider__display(:data-slide="currentIndex + 1")
+        img(:src="currentWork.photo", class="slider__display-img")
+        thumbs(:works = "reserveWorks", :currentWork = "currentWork")
+        buttons(@slide="$emit('slide', $event)")
+
+script(type=text/x-template)#thumbs
+    .slider__display-thumbs
+        ul.thumbs
+            li.thumbs__item(v-for="work in works", ref="t-item",  :class="{active: work.id === currentWork.id}")
+                img(:src="work.photo", class="thumbs__pic")
+                //+image('content/thumbs' + i + '.jpg', 'thumbs__pic')
+
+script(type=text/x-template)#buttons
+    .slider__display-buttons
+        .buttons
+            button(type="button", ref="btn-next", @click = "$emit('slide', 'next')").buttons__item.buttons__item_next
+                +icon('arrow-down', 'buttons__arrow')
+            button(type="button", ref="btn-prev", @click = "$emit('slide', 'prev')").buttons__item.buttons__item_prev
+                +icon('arrow-down', 'buttons__arrow')
+
+script(type="text/x-template")#info
+    .slider__info
+        tags(:tags = "makeTagsArray")
+        .info__text
+            h3.title.title_small.info__title {{currentWork.title}}
+            .info__descr
+                p {{currentWork.desc}}
+            a(:href="currentWork.link" class="iconed-link" target="_blank")
+                +icon('link', 'iconed-link__icon')
+                span.iconed-link__text Посмотреть сайт
+
+script(type="text/x-template")#tags
+    .info__tags
+        ul.tags
+            li.tags__item(v-for="tag in tags") {{tag}}
+
+

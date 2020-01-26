@@ -9,7 +9,32 @@ section.skills
             .skills-board__content
                 h2.title.title_small.skills-board__title Чем я&nbsp;могу быть полезен вам
                 .text.skills-board__text Этот сайт я&nbsp;сделал в&nbsp;рамках обучения в&nbsp;Школе онлайн образования LoftSchool. Чуть позже я&nbsp;освежу в&nbsp;нём свой контент. А&nbsp;пока посмотрите, как тут всё классно и&nbsp;красиво!
-                +chart('Front-end', ['HTML5', 'CSS3', 'Javascript', 'Vue.js'])
-                +chart('Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack'])
+                #circlesChart-component
 .mobile-bag
     +image('content/bag.png', 'mobile-bag__img')
+
+
+//Vue-templates for circles chart:
+
+script(type="text/x-template")#board-list
+    ul.charts
+        li.charts__item(v-for="chart in charts")
+            .chart
+                h2.chart__title {{chart.skillsGroup}}
+                board-circle(:chart="chart")
+
+
+script(type="text/x-template")#board-circle
+    ul.chart__list
+        li.chart__item(v-for="(skillPercent, skillName) in chart.skills")
+            span.chart__text {{skillName}}
+            chart-circle(:skillPercent="skillPercent")
+
+script(type="text/x-template")#progress
+        svg(class="chart__svg", width="150px", height="150px", viewbox="0 0 140 140", preserveAspectRatio="none")
+            circle(cx="50%", cy="50%", r="65", stroke="#e9e9e9", fill="transparent", stroke-width="10")
+            defs
+                linearGradient( id="gradient" x1="0%" y1="0%" x2="0%" y2="100%")
+                    stop(offset="0%" stop-color="#ad00ed")
+                    stop(offset="100%" stop-color="#5500f2")
+            circle(class="progress-line", ref="colored", cx="50%", cy="50%", r="65", stroke="url(#gradient)", fill="transparent", stroke-width="20")

@@ -10,6 +10,7 @@ html(lang="en")
     body
         .mountain
             .mountain__parallax
+                +image("parallax/mountain.jpg", "mountain__bg")
                 -
                     var parallax = [
                         'sky',
@@ -33,6 +34,19 @@ html(lang="en")
         .budda
             .budda__parallax
                 +image('parallax/budda.jpg', 'budda__bg')
+                -
+                    var parallaxBuddha = [
+                        'budda_sky',
+                        'budda_mount',
+                        'budda',
+                        'budda_clb',
+                        'budda_cls',
+                    ]
+
+                each layer in parallaxBuddha
+                    div(class=`parallax__layer_${layer} parallax__layer`)
+                        +image(`parallax/budda/${layer}.png`)
+
             include ./sections/reviews.pug
 
             include ./sections/form.pug

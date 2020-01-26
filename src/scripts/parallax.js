@@ -36,7 +36,34 @@ parallax = (function () {
     }
 }());
 
+parallaxBudda = (function () {
+    let layer1 = document.querySelector('.parallax__layer_budda_sky'),
+        layer2 = document.querySelector('.parallax__layer_budda_mount'),
+        layer3 = document.querySelector('.parallax__layer_budda'),
+        layer4 = document.querySelector('.parallax__layer_budda_cls'),
+        layer5 = document.querySelector('.parallax__layer_budda_clb');
+
+    return {
+        move: function (layer, windowScroll, strafeAmount) {
+            let strafe = windowScroll / -strafeAmount + '%',
+                transformString = 'translate3d(0,' + strafe + ', 0)';
+            style = layer.style;
+
+            style.transform = transformString;
+
+        },
+        init: function (wScroll) {
+            this.move(layer1, wScroll, 100);
+            this.move(layer2, wScroll, 80);
+            this.move(layer3, wScroll, 40);
+        }
+
+    }
+}());
+
+
 window.onscroll = function () {
     let wScroll = window.pageYOffset;
     parallax.init(wScroll);
+    parallaxBudda.init(wScroll);
 };

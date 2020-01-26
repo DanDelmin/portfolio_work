@@ -9,6 +9,9 @@
     @include tablets-hor() {
         justify-content: flex-start;
     }
+    @include phones {
+      justify-content: space-between;
+    }
   }
 
   &__logo {
@@ -18,6 +21,9 @@
     @include tablets-hor() {
         flex: 1 0 auto;
     }
+    @include phones {
+      flex: 0;
+    }
   }
 
   &__burger-btn {
@@ -25,6 +31,7 @@
     position: relative;
     align-items: center;
     width: 24px;
+    z-index: 10;
 
     &::before {
       content: '';
@@ -109,6 +116,10 @@
       margin: 0 92px 0 30px;
     }
   }
+
+  @include phones {
+    display: none;
+  }
 }
 
 .mobile-menu {
@@ -122,12 +133,10 @@
   box-shadow: 0 4px 8px rgba(#000, .16);
   z-index: 15;
   transform: translateX(100%);
-  opacity: 0;
   transition: all .3s ease-in-out;
   display: none;
 
   &.active {
-    opacity: 1;
     transform: translateX(0);
   }
 

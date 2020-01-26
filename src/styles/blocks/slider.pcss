@@ -5,6 +5,12 @@
     padding: 76px 0;
     overflow-x: hidden;
   }
+
+  &__container {
+    @include phones {
+      padding: 0;
+    }
+  }
 }
 
 .title.works__title {
@@ -23,18 +29,26 @@
     @include tablets-vert {
       width: calc((100% / 12) * 11);
       margin: 0;
-      &::after {
-        counter-increment: slides-num;
-        content: '2'; //counter(slides-num); //если в slider__info появится еще блок с текст, то счетчик увеличится
-        font-size: 28rem;
-        line-height: 19rem;
-        font-weight: 800;
-        color: #e6e6e6;
-        text-indent: -125px;
-        position: absolute;
-        top: 0;
-        right: -160Px;
-        z-index: -1;
+    }
+    @include phones {
+      width: 100%;
+    }
+
+    &::before {
+      content: attr(data-slide);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-35%);
+      line-height: 1;
+      left: 90%;
+      font-size: 25rem;
+      font-weight: 800;
+      color: #e6e6e6;
+      z-index: -1;
+      display: block;
+
+      @include phones {
+        content: '';
       }
     }
   }
@@ -43,6 +57,13 @@
     position: absolute;
     right: -3px;
     bottom: -3px;
+    overflow: hidden;
+    height: 300Px;
+    display: block;
+
+    @include phones {
+      display: none;
+    }
   }
 
   &__display-buttons {
@@ -53,7 +74,6 @@
   &__info {
     width: calc((100% / 12) * 4);
     margin: 0 0 0 15px;
-    counter-reset: slides-num; //слушаем блок инфо для счетчика
 
     @include tablets-vert {
       width: calc((100% / 12) * 10);
@@ -68,16 +88,19 @@
 }
 
 .thumbs {
+  padding: 10px 0 0;
   &__item {
     position: relative;
     cursor: pointer;
     transition: all .2s linear;
     border: 3px solid transparent;
-    margin: -6px 0 0;
-    max-width: 178px;
+    margin: -3px 0 0;
+    max-width: 178Px;
+    height: 100Px;
+    z-index: 1;
+    overflow: hidden;
 
     &:hover {
-      z-index: 1;
       border-color: #5500f2;
     }
 
@@ -101,17 +124,17 @@
     fill: #fff;
   }
 
-  &__item {
+  & &__item {
     width: 50Px;
     height: 50Px;
     background: #353e4e;
     transition: all .2s linear;
 
-    &_next .buttons__arrow {
+    &_prev .buttons__arrow {
       transform: rotate(90deg);
     }
 
-    &_prev .buttons__arrow {
+    &_next .buttons__arrow {
       transform: rotate(-90deg);
     }
 
@@ -161,27 +184,9 @@
 .info__text {
   padding: 0 0 0 125px;
   position: relative;
-  font-size: 0; //для выравнивания before
-
-  &::before {
-    counter-increment: slides-num;
-    content: counter(slides-num); //если в slider__info появится еще блок с текст, то счетчик увеличится
-    font-size: 28rem;
-    line-height: 19rem;
-    font-weight: 800;
-    color: #e6e6e6;
-    text-indent: -125px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
 
   @include tablets-vert {
     padding: 0;
-    &:before {
-      content: none;
-    }
   }
 }
 

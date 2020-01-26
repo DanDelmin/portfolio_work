@@ -4,13 +4,12 @@ function toggleMobileMenu() {
 
     header.addEventListener('click', function (event) {
         let target = event.target;
-        if(target.classList.contains("header__burger-btn")) {
+        if (target.classList.contains("header__burger-btn")) {
             mobileMenu.classList.add('active');
-        } else if(target.classList.contains("mobile-menu__close")) {
+        } else if (target.classList.contains("mobile-menu__close")) {
             mobileMenu.classList.remove('active');
         }
     });
 }
 
 toggleMobileMenu();
-console.log("menu");

@@ -2,6 +2,7 @@
   overflow: hidden;
   min-height: 100%;
   position: relative;
+
   &__parallax {
     position: absolute;
     top: 0;
@@ -10,37 +11,53 @@
     bottom: 0;
     z-index: -1;
   }
-    &__bg {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+
+    @include tablets-hor {
+      display: block;
     }
+  }
 
   .parallax {
     &__layer {
       position: absolute;
+      display: block;
 
       &_mountain {
         top: 300px;
       }
+
       &_baloon {
         right: 450px;
         top: 450px;
       }
+
       &_cloud {
         top: 520px;
       }
+
       &_man {
         top: 570px;
         left: -450px
       }
+
       &_mountain1 {
         top: 690px;
       }
+
       &_white {
         top: 720px;
         max-width: none;
         left: -2018px;
+      }
+
+      @include tablets-hor {
+        display: none;
       }
     }
   }
@@ -51,6 +68,7 @@
   overflow: hidden;
   min-height: 100%;
   position: relative;
+
   &__parallax {
     position: absolute;
     top: 0;
@@ -59,10 +77,62 @@
     bottom: 0;
     z-index: -1;
   }
-    &__bg {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+
+    @include tablets-hor {
+      display: block;
     }
+  }
+
+  .parallax {
+    &__layer {
+      position: absolute;
+      display: block;
+
+      @include tablets-hor {
+        display: none;
+      }
+    }
+
+    &__layer_budda_sky {
+      left: 0;
+      top: 30%;
+      min-height: 100%;
+      & img {
+        height: 100%;
+      }
+    }
+
+    &__layer_budda_mount {
+      bottom: -35%;
+      right: 0;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    &__layer_budda {
+      right: calc(50% - 750px);
+      bottom: -35%;
+      max-width: 600px;
+    }
+    &__layer_budda_clb {
+      left: 0;
+      bottom: 0;
+    }
+    &__layer_budda_cls {
+      left: calc(50% - 30%);
+      bottom: 0;
+    }
+    @include tablets-hor {
+      display: none;
+    }
+  }
 
 }
