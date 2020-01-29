@@ -16,7 +16,7 @@ parallax = (function () {
                 transformBaloonString = 'translate3d(' + strafe + ',' + strafe + ', 0)',
                 style = layer.style;
 
-            if( layer === layer3) {
+            if (layer === layer3) {
                 style.transform = transformBaloonString;
                 style.webkitTransform = transformBaloonString;
             } else {
@@ -67,3 +67,33 @@ window.onscroll = function () {
     parallax.init(wScroll);
     parallaxBudda.init(wScroll);
 };
+
+
+let titleS = document.querySelector('.title-section'),
+    titleSHeight = titleS.offsetHeight + 80,
+    scrollButton = document.querySelector('.scroll-trigger'),
+    windowTop = window.pageYOffset,
+    timer;
+
+scrollButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    winScrollUp();
+
+});
+
+function winScrollUp() {
+
+    if (windowTop < 900) {
+        window.scrollTo(0, windowTop);
+        windowTop += 5;
+        timer = setTimeout(winScrollUp, 1);
+        console.log(windowTop);
+        console.log(titleSHeight);
+
+    } else if(windowTop >= 900){
+        clearTimeout(timer);
+        // console.log(timer);
+        window.scrollTo(0, titleSHeight);
+        windowTop = 0;
+    }
+}

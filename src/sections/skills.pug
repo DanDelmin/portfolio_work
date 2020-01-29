@@ -31,10 +31,10 @@ script(type="text/x-template")#board-circle
             chart-circle(:skillPercent="skillPercent")
 
 script(type="text/x-template")#progress
-        svg(class="chart__svg", width="150px", height="150px", viewbox="0 0 140 140", preserveAspectRatio="none")
-            circle(cx="50%", cy="50%", r="65", stroke="#e9e9e9", fill="transparent", stroke-width="10")
+        svg(class="chart__svg", width="160px", height="160px", viewbox="0 0 140 140", preserveAspectRatio="none")
+            circle(cx="50%", cy="50%", r="70", stroke="#e9e9e9", fill="transparent", stroke-width="10")
             defs
                 linearGradient( id="gradient" x1="0%" y1="0%" x2="0%" y2="100%")
                     stop(offset="0%" stop-color="#ad00ed")
                     stop(offset="100%" stop-color="#5500f2")
-            circle(class="progress-line", ref="colored", cx="50%", cy="50%", r="65", stroke="url(#gradient)", fill="transparent", stroke-width="20")
+            circle(class="progress-line", ref="colored", cx="50%", cy="50%", r="70", stroke="url(#gradient)", fill="transparent", stroke-width="20")

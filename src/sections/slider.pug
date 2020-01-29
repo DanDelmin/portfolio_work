@@ -20,7 +20,6 @@ script(type=text/x-template)#thumbs
         ul.thumbs
             li.thumbs__item(v-for="work in works", ref="t-item",  :class="{active: work.id === currentWork.id}")
                 img(:src="work.photo", class="thumbs__pic")
-                //+image('content/thumbs' + i + '.jpg', 'thumbs__pic')
 
 script(type=text/x-template)#buttons
     .slider__display-buttons
