@@ -1,58 +1,150 @@
 .skills {
   margin: -120px 0 0;
+  background: url("$img-url/bag.png") no-repeat 0 bottom / 40%;
+  @include desktop {
+    background-size: 55%;
+    background-position: -210px bottom;
+  }
+  @include tablets-vert {
+    background: none;
+  }
 }
+
 .skills-board {
   display: flex;
   justify-content: flex-end;
-  background: url("$img-url/bag.png") no-repeat -10% bottom / 45%;
   padding: 150px 0 0;
 
   &__content {
     width: calc((100% / 12) * 8);
     margin: 0 15px;
+    @include desktop {
+      width: calc((100% / 12) * 9);
+    }
+    @include tablets-vert {
+      width: calc((100% / 12) * 10);
+    }
+    @include tablets-vert {
+      width: 100%;
+    }
   }
+
   &__title {
     margin: 0 0 60px;
+    @include tablets-hor {
+      text-align: center;
+      margin: auto;
+    }
   }
+
   &__text {
     margin: 0 0 96px;
     max-width: 585px;
+    @include tablets-hor {
+      text-align: center;
+      margin: 0;
+      max-width: none;
+    }
   }
+
+  @include tablets-vert {
+    justify-content: center;
+  }
+
 }
 
 .chart {
   margin: 58px 0 0 125px;
+  @include tablets-hor {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin-left: 30px;
+  }
+
   &__title {
     font-size: 24px;
     font-weight: bold;
     margin: 0 0 45px;
+    @include tablets-hor {
+      text-align: center;
+    }
   }
+
   &__list {
     display: flex;
     align-items: center;
+
+    @include tablets-vert {
+      justify-content: space-evenly;
+    }
+    @include tablets {
+      flex-wrap: wrap;
+    }
   }
+
   &__item {
-    width: 140px;
-    height: 140px;
+    position: relative;
+    width: 160Px;
+    height: 160Px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:not(:last-child) {
+      margin: 0 24px 0 0;
+    }
+
+    @include tablets-vert {
+      &:not(:last-child) {
+        margin: 0 5px 18px;
+      }
+    }
+  }
+
+  &__text {
     font-size: 18px;
     font-weight: bold;
     color: rgba($text-color, .5);
-
-    &:not(:first-child) {
-      margin-left: 68px;
-    }
+    text-align: center;
+    max-width: 130px;
   }
 
   &__svg {
     position: absolute;
+
     .progress-line {
       transform: rotate(180deg);
       transform-origin: center;
       transition: stroke-dashoffset 1s linear;
-      stroke-dashoffset: 280;
+      stroke-dasharray: 440Px;
+      stroke-dashoffset: 440Px;
     }
   }
+
+  @include tablets-vert {
+    margin: 58px 0 0;
+  }
+}
+
+.mobile-bag {
+  align-items: center;
+  justify-content: center;
+  display: none;
+  margin: 120px 0 0;
+
+  &__img {
+    max-width: 45%;
+
+    @include phones {
+      max-width: none;
+      width: 100%;
+    }
+  }
+
+  @include tablets-vert {
+    display: flex;
+    margin: 80px 0 0;
+  }
+
 }

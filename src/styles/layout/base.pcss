@@ -2,7 +2,7 @@ html {
   @include desktop {
     font-size: 15px;
   }
-  @include tablets {
+  @include tablets-hor {
     font-size: 14px;
   }
 }
@@ -18,35 +18,26 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $text-color;
+  max-width: 2000px;
+  margin: auto;
 }
-
-//.intro {
-//  overflow: hidden;
-//  min-height: 100%;
-//  position: relative;
-//}
-//.parallax {
-//  position: absolute;
-//  top: 0;
-//  left: 0;
-//  right: 0;
-//  bottom: 0;
-//  z-index: -1;
-//
-//  &__bg {
-//    width: 100%;
-//    object-fit: cover;
-//  }
-//}
 
 .container {
   margin: 0 auto;
   max-width: 1480px;
   width: 95%;
   // width: 1490px;
+  @include desktop {
+    padding: 0 30px;
+  }
+
+  @include tablets-vert {
+    padding: 0;
+  }
 
   @include phones {
-    width: 85%;
+    width: 100%;
+    padding: 0 30px;
   }
 }
 

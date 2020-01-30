@@ -10,7 +10,22 @@ html(lang="en")
     body
         .mountain
             .mountain__parallax
-                +image('parallax/mountain.jpg', 'mountain__bg')
+                +image("parallax/mountain.jpg", "mountain__bg")
+                -
+                    var parallax = [
+                        'sky',
+                        'mountain',
+                        'baloon',
+                        'cloud',
+                        'man',
+                        'mountain1',
+                        'white',
+                    ]
+
+                each layer in parallax
+                    +image(`parallax/mountain/${layer}.png`, `parallax__layer_${layer} parallax__layer`)
+
+
             include ./sections/header.pug
             include ./sections/title.pug
             include ./sections/about.pug
@@ -19,6 +34,19 @@ html(lang="en")
         .budda
             .budda__parallax
                 +image('parallax/budda.jpg', 'budda__bg')
+                -
+                    var parallaxBuddha = [
+                        'budda_sky',
+                        'budda_mount',
+                        'budda',
+                        'budda_clb',
+                        'budda_cls',
+                    ]
+
+                each layer in parallaxBuddha
+                    div(class=`parallax__layer_${layer} parallax__layer`)
+                        +image(`parallax/budda/${layer}.png`)
+
             include ./sections/reviews.pug
 
             include ./sections/form.pug

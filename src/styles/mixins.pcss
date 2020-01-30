@@ -10,6 +10,18 @@
   }
 }
 
+@mixin tablets-hor() {
+  @media screen and (max-width: $bp-tablets-hor) {
+    @content;
+  }
+}
+
+@mixin tablets-vert() {
+  @media screen and (max-width: $bp-tablets-vert) {
+    @content;
+  }
+}
+
 @mixin tablets() {
   @media screen and (max-width: $bp-tablets) {
     @content;
