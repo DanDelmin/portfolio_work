@@ -913,7 +913,9 @@
               font-weight: 600;
               color: #383bcf;
             @media screen and (max-width: 920px) {
-                margin-bottom: 30px;
+                {
+                    margin-bottom: 30px;
+                }
             }
           }
     }
