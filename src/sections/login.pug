@@ -1,0 +1,20 @@
+
+.login-layout
+    .login-modal
+        h2.login-modal__title Авторизация
+        .login-modal__loginForm
+            #loginApp
+
+
+
+
+
+script(type=text/x-template)#templateLogin
+    form.loginForm
+        label(class="form__label loginForm__label" for='user-name') Логин
+            input(class="form__input loginForm__name" type="text" id="user-name" name="user-name" pattern="[A-Za-zА-Яа-яЁё]" required)
+            +icon('user', 'form__icon form__icon_user')
+        label(class="form__label loginForm__label" for="user-pass") Пароль
+            input(class="form__input loginForm__password" type="password" id="user-pass" name="user-pass" required)
+            +icon('password', 'form__icon form__icon_mail')
+        button(type='submit', class="form__submit loginForm__submit") Отправить
